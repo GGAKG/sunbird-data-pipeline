@@ -29,8 +29,6 @@
     - {var: 'ENV', value: '{{env}}'}
     - {var: 'KAFKA_BROKER_HOST', value: "{{groups['processing-cluster-kafka'][0]}}:9092"}
 
-has context menu
-
 - name: Install required python packages
   become: yes
   action: apt pkg={{ item }} state=present update_cache=yes
