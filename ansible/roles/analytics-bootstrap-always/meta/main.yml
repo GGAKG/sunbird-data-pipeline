@@ -1,6 +1,6 @@
 ---
 dependencies:
   - { role: jdk11 , become: yes }
-  # - { role: azure-cli  , become: yes }
+  - { role: azure-cli  , become: yes }
     
   
