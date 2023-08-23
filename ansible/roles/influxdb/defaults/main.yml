@@ -13,7 +13,7 @@ influxdb_service_name: influxdb
 monitoring_db: monitoring_events
 influxdb_relay_udp_port: 9099
 influxdb_relay_http_port: 9096
-influxdb_relay_deb_link: https://s3.ap-south-1.amazonaws.com/ekstep-third-party-libraries/influxdb-relay/influxdb-relay_535181e_amd64.deb
+influxdb_relay_deb_link: https://s3.ap-south-1.amazonaws.com/sunbird-beehyv-public/influxdb-relay_05c8811_amd64.deb
 influxdb_relay_deb_file: influxdb-relay.deb
 influxdb_relay_deb_package_name: influxdb-relay
 influxdb_relay_udp_bind_address: ":{{ influxdb_relay_udp_port }}"
