@@ -72,10 +72,10 @@
   become_user: "{{ analytics_user }}"
   template: src=spark-defaults.j2 dest={{ spark.home }}/conf/spark-defaults.conf mode=755 owner={{ analytics_user }} group={{ analytics_group }}
 
-- name: Update spark env
-  become: yes
-  become_user: "{{ analytics_user }}"
-  template: src=spark-env.j2 dest={{ spark.home }}/conf/spark-env.sh mode=755 owner={{ analytics_user }} group={{ analytics_group }}
+# - name: Update spark env
+#   become: yes
+#   become_user: "{{ analytics_user }}"
+#   template: src=spark-env.j2 dest={{ spark.home }}/conf/spark-env.sh mode=755 owner={{ analytics_user }} group={{ analytics_group }}
 
 - name: Copy Jets3t properties file
   become: yes
