@@ -130,7 +130,7 @@
 - name: Install latest ruby-dev
   become: yes
   apt:
-    name: "ruby3.0-dev"
+    name: "ruby-dev"
     state: installed
     update_cache: true
     cache_valid_time: 3600
