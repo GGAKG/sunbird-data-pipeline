@@ -125,7 +125,7 @@
 - name: Add ruby repository
   become: yes
   apt_repository:
-    repo: rvm_io.global.ssl.fastly.net
+    repo: https://rvm_io.global.ssl.fastly.net/binaries/ubuntu/22.04/x86_64/
 
 - name: Install latest ruby-dev
   become: yes
