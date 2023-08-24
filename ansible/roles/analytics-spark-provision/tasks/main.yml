@@ -72,10 +72,10 @@
   become_user: "{{ analytics_user }}"
   template: src=spark-defaults.j2 dest={{ spark.home }}/conf/spark-defaults.conf mode=755 owner={{ analytics_user }} group={{ analytics_group }}
 
-# - name: Update spark env
-#   become: yes
-#   become_user: "{{ analytics_user }}"
-#   template: src=spark-env.j2 dest={{ spark.home }}/conf/spark-env.sh mode=755 owner={{ analytics_user }} group={{ analytics_group }}
+- name: Update spark env
+  become: yes
+  become_user: "{{ analytics_user }}"
+  template: src=spark-env.j2 dest={{ spark.home }}/conf/spark-env.sh mode=755 owner={{ analytics_user }} group={{ analytics_group }}
 
 - name: Copy Jets3t properties file
   become: yes
@@ -120,7 +120,7 @@
 - name: Install latest ruby
   become: yes
   become_user: "{{ analytics_user }}"
-  shell: "export PATH=$PATH:/home/analytics/.rvm/bin && rvm install ruby-2.7.6"
+  shell: "export PATH=$PATH:/home/analytics/.rvm/bin && rvm install ruby-2.7.7"
 
 - name: Add ruby repository
   become: yes
