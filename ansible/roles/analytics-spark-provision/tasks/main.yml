@@ -138,7 +138,7 @@
 - name: Install ruby-kafka
   become: yes
   become_user: "{{ analytics_user }}"
-  shell: "bash -ilc 'export PATH=$PATH:/home/analytics/.rvm/bin && rvm use system && gem install ruby-kafka"
+  shell: "bash -ilc 'export PATH=$PATH:/home/analytics/.rvm/bin && rvm use system && gem install ruby-kafka'"
 
 - name: Download Kafka-2.11
   become: yes
