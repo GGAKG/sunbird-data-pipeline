@@ -1,13 +1,13 @@
-- name: download and unarchive zookeeper binary
-  become: yes
-  #  become_user: "{{ zookeeper_user }}"
-  unarchive: 
-    src: "{{ zookeeper_url }}"
-    dest: "{{ zookeeper_dir }}"
-    mode: 0755
-    group: "{{ zookeeper_user }}"
-    owner: "{{ zookeeper_user }}"
-    remote_src: True
+# - name: download and unarchive zookeeper binary
+#   become: yes
+#   #  become_user: "{{ zookeeper_user }}"
+#   unarchive: 
+#     src: "{{ zookeeper_url }}"
+#     dest: "{{ zookeeper_dir }}"
+#     mode: 0755
+#     group: "{{ zookeeper_user }}"
+#     owner: "{{ zookeeper_user }}"
+#     remote_src: True
 
 - name: check if the zookeeper dir already exists
   stat:
