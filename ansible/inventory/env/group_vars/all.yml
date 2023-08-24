@@ -175,8 +175,8 @@ dialcode_endpoint: "dialcode/v3/read/"
 exhaust_job_assessment_primary_category: "Practice Question Set"
 etb_dialcode_list_druid_length: 70
 # s3 storage config
-s3_storage_key: "{{ sunbird_private_s3_storage_key }}"
-s3_storage_secret: "{{ sunbird_private_s3_storage_secret }}"
+s3_storage_key: "{{ aws_access_key_id }}"
+s3_storage_secret: "{{ aws_secret_access_key }}"
 s3_storage_endpoint: ""
 s3_request_signature_version: AWS4-HMAC-SHA256
 s3_path_style_access: false
