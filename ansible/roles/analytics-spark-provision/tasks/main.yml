@@ -120,7 +120,7 @@
 - name: Install latest ruby
   become: yes
   become_user: "{{ analytics_user }}"
-  shell: "export PATH=$PATH:/home/analytics/.rvm/bin && rvm install ruby-3.0.4"
+  shell: "export PATH=$PATH:/home/analytics/.rvm/bin && rvm pkg install openssl && rvm install ruby-3.0.4 -with-openssl-dir=$HOME/.rvm/usr"
 
 # - name: Add ruby repository
 #   become: yes
