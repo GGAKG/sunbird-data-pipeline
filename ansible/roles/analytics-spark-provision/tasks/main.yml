@@ -122,10 +122,10 @@
   become_user: "{{ analytics_user }}"
   shell: "export PATH=$PATH:/home/analytics/.rvm/bin && rvm install ruby-3.0.4"
 
-# - name: Add ruby repository
-#   become: yes
-#   apt_repository:
-#     repo: ppa:brightbox/ruby-ng
+- name: Add ruby repository
+  become: yes
+  apt_repository:
+    repo: rvm_io.global.ssl.fastly.net
 
 - name: Install latest ruby-dev
   become: yes
@@ -138,7 +138,7 @@
 - name: Install ruby-kafka
   become: yes
   become_user: "{{ analytics_user }}"
-  shell: "bash -ilc 'export PATH=$PATH:/home/analytics/.rvm/bin && rvm use system && gem install ruby-kafka'"
+  shell: "bash -ilc 'export PATH=$PATH:/home/analytics/.rvm/bin && rvm --default use ruby-3.0.4 && gem install ruby-kafka'"
 
 - name: Download Kafka-2.11
   become: yes
