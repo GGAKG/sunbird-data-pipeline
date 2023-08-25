@@ -154,15 +154,29 @@
   tags:
     - kafka-provision
 
+# - name: Add python ppa
+#   become: yes
+#   apt_repository:
+#     repo: ppa:deadsnakes/ppa
+
+# - name: Install python 3.6
+#   become: yes
+#   apt:
+#     name: python3.6
+#     state: present
+#     update_cache: true
+#     cache_valid_time: 3600
+
 - name: Add python ppa
   become: yes
-  apt_repository:
-    repo: ppa:deadsnakes/ppa
+  ansible.builtin.raw: apt-add-repository -y ppa:deadsnakes/ppa
+
+- name: Update package cache
+  become: yes
+  ansible.builtin.apt: update_cache=yes
 
 - name: Install python 3.6
   become: yes
-  apt:
+  ansible.builtin.apt:
     name: python3.6
     state: present
-    update_cache: true
-    cache_valid_time: 3600
